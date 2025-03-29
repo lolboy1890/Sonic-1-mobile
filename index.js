@@ -10560,7 +10560,14 @@ if (Module['noInitialRun']) shouldRunNow = false;
 
 run();
 
+        function save(state) {
+          localStorage.setItem('gameData', JSON.stringify(state));
+        }
 
+        function load() {
+          const data = localStorage.getItem('gameData');
+          return data ? JSON.parse(data) : null;
+        }
 
 
 
